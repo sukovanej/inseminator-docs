@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Enforced parameters &#8212; inseminator  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="enforced-parameters">
+<h1>Enforced parameters<a class="headerlink" href="#enforced-parameters" title="Permalink to this headline">¶</a></h1>
+<p>If it is not desired to provide a single concrete implementation for abstract or protocol dependency
+one can enforce the resolver to use concrete types for specified parameters. Simply call <code class="docutils literal notranslate"><span class="pre">container.resolve</span></code>
+also with keywords and tell the resolve how it should resolve some particular parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">container</span> <span class="o">=</span> <span class="n">Container</span><span class="p">()</span>
+<span class="n">controller</span> <span class="o">=</span> <span class="n">container</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">Controller</span><span class="p">,</span> <span class="n">domain_model</span><span class="o">=</span><span class="n">ConcreteDomainModel</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Moreover, using this approach <code class="docutils literal notranslate"><span class="pre">ConcreteDomainModel</span></code> is not evaluated and saved in the container but
+rather in a sub-container which exists only during the resolving. Therefore, if we want to create
+another instance that depends on <code class="docutils literal notranslate"><span class="pre">DomainModel</span></code> we must either use <code class="docutils literal notranslate"><span class="pre">register</span></code> or again specify
+the parameter during resolving.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">inseminator</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="injecting_functions.html">Injecting functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="default_parameters.html">Default parameter values</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Milan Suk.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/enforec_parameters.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

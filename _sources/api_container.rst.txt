@@ -1,0 +1,5 @@
+inseminator.container
+===========================
+
+.. automodule:: inseminator.container
+   :members:

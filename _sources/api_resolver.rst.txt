@@ -1,0 +1,5 @@
+inseminator.resolver
+===========================
+
+.. automodule:: inseminator.resolver
+   :members:

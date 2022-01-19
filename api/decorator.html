@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>inseminator.decorator &#8212; inseminator  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="inseminator.dependency" href="dependency.html" />
+    <link rel="prev" title="inseminator.container" href="container.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-inseminator.decorator">
+<span id="inseminator-decorator"></span><h1>inseminator.decorator<a class="headerlink" href="#module-inseminator.decorator" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="inseminator.decorator.DecoratorResolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">inseminator.decorator.</span></span><span class="sig-name descname"><span class="pre">DecoratorResolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resolver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">inseminator.resolver.DependencyResolver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="metrics.html#inseminator.metrics.Metrics" title="inseminator.metrics.Metrics"><span class="pre">inseminator.metrics.Metrics</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_enabled</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#inseminator.decorator.DecoratorResolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class used internally to provide functionality for <code class="docutils literal notranslate"><span class="pre">inject</span></code> decorator.</p>
+<p>DecoratorResolver constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resolver</strong> (<em>DependencyResolver</em>) – DependencyResolver to be used for resolving dependencies.</p></li>
+<li><p><strong>metrics</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="metrics.html#inseminator.metrics.Metrics" title="inseminator.metrics.Metrics"><em>Metrics</em></a><em>]</em>) – Metrics object for reporting.</p></li>
+<li><p><strong>cache_enabled</strong> (<em>bool</em>) – If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, objects are constructed only onced and then reused.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="inseminator.decorator.DecoratorResolver.clear_cache">
+<span class="sig-name descname"><span class="pre">clear_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#inseminator.decorator.DecoratorResolver.clear_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all cached dependencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="inseminator.decorator.DecoratorResolver.construct_dependencies">
+<span class="sig-name descname"><span class="pre">construct_dependencies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#inseminator.decorator.DecoratorResolver.construct_dependencies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct all dependencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="inseminator.decorator.DecoratorResolver.inject_function">
+<span class="sig-name descname"><span class="pre">inject_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#inseminator.decorator.DecoratorResolver.inject_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the function into a new function that will received requested dependencies when invoked.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fn</strong> (<em>Callable</em><em>[</em><em>...</em><em>, </em><em>Any</em><em>]</em>) – The function.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Function that will be assigned dependencies.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Callable[…, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="inseminator.decorator.DecoratorResolver.preload">
+<span class="sig-name descname"><span class="pre">preload</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#inseminator.decorator.DecoratorResolver.preload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct all dependencies and store it in the cache.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="inseminator.decorator.Depends">
+<span class="sig-prename descclassname"><span class="pre">inseminator.decorator.</span></span><span class="sig-name descname"><span class="pre">Depends</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">inseminator.decorator.T</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">inseminator.decorator.T</span></span></span><a class="headerlink" href="#inseminator.decorator.Depends" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to mark a function parameter as a dependency.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameter_type</strong> (<em>Type</em><em>[</em><em>T</em><em>]</em>) – The dependency</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value representing the dependency request.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>T to satisfy type checker but it actually returns an instance of <code class="docutils literal notranslate"><span class="pre">ParameterDependence</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="inseminator.decorator.ParameterDependence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">inseminator.decorator.</span></span><span class="sig-name descname"><span class="pre">ParameterDependence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter_dependency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#inseminator.decorator.ParameterDependence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper class to represent dependency request.</p>
+<p>ParameterDependence constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameter_dependency</strong> (<em>Any</em>) – The dependency type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">inseminator</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_usage.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enforced_parameters.html">Enforced parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../injecting_functions.html">Injecting functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../default_parameters.html">Default parameter values</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="container.html">inseminator.container</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">inseminator.decorator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependency.html">inseminator.dependency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">inseminator.exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html">inseminator.metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resolver.html">inseminator.resolver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scoped_dict.html">inseminator.scoped_dict</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">API</a><ul>
+      <li>Previous: <a href="container.html" title="previous chapter">inseminator.container</a></li>
+      <li>Next: <a href="dependency.html" title="next chapter">inseminator.dependency</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Milan Suk.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/decorator.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
